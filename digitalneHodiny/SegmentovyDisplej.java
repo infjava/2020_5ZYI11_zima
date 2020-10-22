@@ -7,7 +7,7 @@ public class SegmentovyDisplej {
     private Obdlznik f;
     private Obdlznik g;
     
-    public SegmentovyDisplej() {
+    public SegmentovyDisplej(int x, int y) {
         this.a = new Obdlznik();
         this.b = new Obdlznik();
         this.c = new Obdlznik();
@@ -15,6 +15,21 @@ public class SegmentovyDisplej {
         this.e = new Obdlznik();
         this.f = new Obdlznik();
         this.g = new Obdlznik();
+        
+        this.a.posunVodorovne(x - 60);
+        this.a.posunZvisle(y - 50);
+        this.b.posunVodorovne(x - 60);
+        this.b.posunZvisle(y - 50);
+        this.c.posunVodorovne(x - 60);
+        this.c.posunZvisle(y - 50);
+        this.d.posunVodorovne(x - 60);
+        this.d.posunZvisle(y - 50);
+        this.e.posunVodorovne(x - 60);
+        this.e.posunZvisle(y - 50);
+        this.f.posunVodorovne(x - 60);
+        this.f.posunZvisle(y - 50);
+        this.g.posunVodorovne(x - 60);
+        this.g.posunZvisle(y - 50);
         
         this.a.zmenStrany(30, 5);
         this.g.zmenStrany(30, 5);
