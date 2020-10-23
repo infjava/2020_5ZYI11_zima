@@ -7,6 +7,8 @@ public class CiselnyDisplej {
     private int hornaHranica;
     private int dolnaHranica;
     private int hodnota;
+    private SegmentovyDisplej desiatky;
+    private SegmentovyDisplej jednotky;
     
     /**
      * Inicializuje ciselny displej na hodnotu 0. Horna hranica sa pouzije
@@ -18,6 +20,11 @@ public class CiselnyDisplej {
         this.hornaHranica = hornaHranica;
         this.dolnaHranica = dolnaHranica;
         this.hodnota = dolnaHranica;
+        this.desiatky = new SegmentovyDisplej(0, 0);
+        this.jednotky = new SegmentovyDisplej(45, 0);
+        
+        this.desiatky.zobrazCislicu(this.hodnota / 10);
+        this.jednotky.zobrazCislicu(this.hodnota % 10);
     }
     
     /**
@@ -39,6 +46,9 @@ public class CiselnyDisplej {
         if (hodnota >= this.dolnaHranica) {
             if (hodnota < this.hornaHranica) {
                 this.hodnota = hodnota;
+                
+                this.desiatky.zobrazCislicu(this.hodnota / 10);
+                this.jednotky.zobrazCislicu(this.hodnota % 10);
             }
         }
     }
@@ -64,5 +74,8 @@ public class CiselnyDisplej {
         if (this.hodnota == this.hornaHranica) {
             this.hodnota = this.dolnaHranica;
         }
+        
+        this.desiatky.zobrazCislicu(this.hodnota / 10);
+        this.jednotky.zobrazCislicu(this.hodnota % 10);
     }
 }
