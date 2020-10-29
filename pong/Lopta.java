@@ -33,7 +33,7 @@ public class Lopta {
         }
     }
     
-    public void tik() {
+    public void posun() {
         this.zobrazenie.skry();
         
         this.zobrazenie.posunVodorovne(this.smerX * 5);
