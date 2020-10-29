@@ -15,4 +15,12 @@ public class Pod {
         
         this.zobrazenie.zobraz();
     }
+    
+    public void posunDole() {
+        this.zobrazenie.posunZvisle(10);
+    }
+    
+    public void posunHore() {
+        this.zobrazenie.posunZvisle(-10);
+    }
 }
