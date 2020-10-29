@@ -1,6 +1,6 @@
 public class Lopta {
     private Kruh zobrazenie;
-    private int smer;
+    private String smer;
     
     public Lopta() {
         this.zobrazenie = new Kruh();
@@ -12,33 +12,37 @@ public class Lopta {
         
         this.zobrazenie.zobraz();
         
-        this.smer = 0;
+        this.smer = "PH";
     }
     
     public void posun() {
+        this.zobrazenie.skry();
+        
         switch (this.smer) {
-            case 0:
+            case "PH":
                 this.zobrazenie.posunZvisle(-5);
                 this.zobrazenie.posunVodorovne(5);
                 break;
-            case 1:
+            case "P":
                 this.zobrazenie.posunVodorovne(5);
                 break;
-            case 2:
+            case "PD":
                 this.zobrazenie.posunZvisle(5);
                 this.zobrazenie.posunVodorovne(5);
                 break;
-            case 3:
+            case "LH":
                 this.zobrazenie.posunZvisle(-5);
                 this.zobrazenie.posunVodorovne(-5);
                 break;
-            case 4:
+            case "L":
                 this.zobrazenie.posunVodorovne(-5);
                 break;
-            case 5:
+            case "LD":
                 this.zobrazenie.posunZvisle(5);
                 this.zobrazenie.posunVodorovne(-5);
                 break;
         }
+        
+        this.zobrazenie.zobraz();
     }
 }
