@@ -1,8 +1,13 @@
+import java.util.Random;
+
 public class Lopta {
     private Kruh zobrazenie;
-    private String smer;
+    private int smerX;
+    private int smerY;
     
     public Lopta() {
+        Random nahodneCisla = new Random();
+        
         this.zobrazenie = new Kruh();
         
         this.zobrazenie.zmenPriemer(10);
@@ -12,36 +17,15 @@ public class Lopta {
         
         this.zobrazenie.zobraz();
         
-        this.smer = "PH";
+        this.smerX = 1;
+        this.smerY = -1;
     }
     
-    public void posun() {
+    public void tik() {
         this.zobrazenie.skry();
         
-        switch (this.smer) {
-            case "PH":
-                this.zobrazenie.posunZvisle(-5);
-                this.zobrazenie.posunVodorovne(5);
-                break;
-            case "P":
-                this.zobrazenie.posunVodorovne(5);
-                break;
-            case "PD":
-                this.zobrazenie.posunZvisle(5);
-                this.zobrazenie.posunVodorovne(5);
-                break;
-            case "LH":
-                this.zobrazenie.posunZvisle(-5);
-                this.zobrazenie.posunVodorovne(-5);
-                break;
-            case "L":
-                this.zobrazenie.posunVodorovne(-5);
-                break;
-            case "LD":
-                this.zobrazenie.posunZvisle(5);
-                this.zobrazenie.posunVodorovne(-5);
-                break;
-        }
+        this.zobrazenie.posunVodorovne(this.smerX * 5);
+        this.zobrazenie.posunZvisle(this.smerY * 5);
         
         this.zobrazenie.zobraz();
     }
