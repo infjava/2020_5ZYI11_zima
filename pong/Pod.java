@@ -1,5 +1,6 @@
 public class Pod {
     private Obdlznik zobrazenie;
+    private int poziciaY;
     
     public Pod(boolean jeLavy) {
         this.zobrazenie = new Obdlznik();
@@ -9,6 +10,8 @@ public class Pod {
         this.zobrazenie.posunVodorovne(-60);
         this.zobrazenie.posunZvisle(75);
         
+        this.poziciaY = 125;
+        
         if (!jeLavy) {
             this.zobrazenie.posunVodorovne(290);
         }
@@ -17,10 +20,16 @@ public class Pod {
     }
     
     public void posunDole() {
-        this.zobrazenie.posunZvisle(10);
+        if (this.poziciaY < 250) {
+            this.zobrazenie.posunZvisle(10);
+            this.poziciaY = this.poziciaY + 10;
+        }
     }
     
     public void posunHore() {
-        this.zobrazenie.posunZvisle(-10);
+        if (this.poziciaY > 0) {
+            this.zobrazenie.posunZvisle(-10);
+            this.poziciaY = this.poziciaY - 10;
+        }
     }
 }
