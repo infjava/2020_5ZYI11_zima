@@ -7,6 +7,7 @@ public class Lopta {
     private int smerY;
     
     private int poziciaY;
+    private int poziciaX;
     
     public Lopta() {
         Random nahodneCisla = new Random();
@@ -17,6 +18,7 @@ public class Lopta {
         
         // nahodne cislo z intervalu <25, 275>
         this.poziciaY = nahodneCisla.nextInt(251) + 25;
+        this.poziciaX = 150;
         
         this.zobrazenie.posunVodorovne(125);
         this.zobrazenie.posunZvisle(this.poziciaY - 65);
@@ -46,8 +48,21 @@ public class Lopta {
         this.zobrazenie.posunVodorovne(this.smerX * 5);
         this.zobrazenie.posunZvisle(this.smerY * 5);
         
+        this.poziciaX += this.smerX * 5;
         this.poziciaY += this.smerY * 5;
         
         this.zobrazenie.zobraz();
+    }
+    
+    public int getStredX() {
+        return this.poziciaX;
+    }
+    
+    public int getStredY() {
+        return this.poziciaY;
+    }
+    
+    public void odrazSaOdPodu() {
+        this.smerX = -this.smerX;
     }
 }

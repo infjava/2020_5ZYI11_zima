@@ -17,6 +17,10 @@ public class Hra {
     
     public void tik() {
         this.lopta.posun();
+        
+        if (this.podLavy.koliduje(this.lopta) || this.podPravy.koliduje(this.lopta)) {
+            this.lopta.odrazSaOdPodu();
+        }
     }
     
     public void posunDole() {
