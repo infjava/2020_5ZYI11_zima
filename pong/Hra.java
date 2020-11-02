@@ -21,6 +21,10 @@ public class Hra {
         if (this.podLavy.koliduje(this.lopta) || this.podPravy.koliduje(this.lopta)) {
             this.lopta.odrazSaOdPodu();
         }
+        
+        if (this.lopta.jeMimoObrazovky()) {
+            this.lopta.umiestniNanovo();
+        }
     }
     
     public void posunDole() {

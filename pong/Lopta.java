@@ -65,4 +65,33 @@ public class Lopta {
     public void odrazSaOdPodu() {
         this.smerX = -this.smerX;
     }
+    
+    public boolean jeMimoObrazovky() {
+        return this.poziciaX < 0 || this.poziciaX > 300;
+    }
+    
+    public void umiestniNanovo() {
+        Random nahodneCisla = new Random();
+        
+        int novaPoziciaY = nahodneCisla.nextInt(251) + 25;
+        int novaPoziciaX = 150;
+        
+        this.zobrazenie.posunVodorovne(novaPoziciaX - this.poziciaX);
+        this.zobrazenie.posunZvisle(novaPoziciaY - this.poziciaY);
+        
+        this.poziciaX = novaPoziciaX;
+        this.poziciaY = novaPoziciaY;
+        
+        if (nahodneCisla.nextBoolean()) {
+            this.smerX = 1;
+        } else {
+            this.smerX = -1;
+        }
+        
+        if (nahodneCisla.nextBoolean()) {
+            this.smerY = 1;
+        } else {
+            this.smerY = -1;
+        }
+    }
 }
