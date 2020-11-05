@@ -42,4 +42,8 @@ public class Hra {
     public void posunVlavo() {
         this.podLavy.posunHore();
     }
+    
+    public void zrus() {
+        System.exit(0);
+    }
 }
