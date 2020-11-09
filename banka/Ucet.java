@@ -1,3 +1,4 @@
+
 public class Ucet {
     private long stavVCentoch;
     private String menoMajitela;
@@ -16,12 +17,20 @@ public class Ucet {
     }
     
     public void vlozPeniaze(int eur, int centov) {
-        this.stavVCentoch += eur * 100 + centov;
+        if (centov < 100) {
+            if (eur >= 0 && centov >= 0) {
+                this.stavVCentoch += eur * 100 + centov;
+            }
+        }
     }
     
     public void vyberPeniaze(int eur, int centov) {
-        if (eur * 100 + centov <= this.stavVCentoch) {
-            this.stavVCentoch -= eur * 100 + centov;
+        if (centov < 100) {
+            if (eur >= 0 && centov >= 0) {
+                if (eur * 100 + centov <= this.stavVCentoch) {
+                    this.stavVCentoch -= eur * 100 + centov;
+                }
+            }
         }
     }
     
