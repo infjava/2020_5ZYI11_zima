@@ -17,21 +17,31 @@ public class Ucet {
     }
     
     public void vlozPeniaze(int eur, int centov) {
-        if (centov < 100) {
-            if (eur >= 0 && centov >= 0) {
-                this.stavVCentoch += eur * 100 + centov;
-            }
+        if (centov >= 100) {
+            return;
         }
+        
+        if (eur < 0 || centov < 0) {
+            return;
+        }
+        
+        this.stavVCentoch += eur * 100 + centov;
     }
     
     public void vyberPeniaze(int eur, int centov) {
-        if (centov < 100) {
-            if (eur >= 0 && centov >= 0) {
-                if (eur * 100 + centov <= this.stavVCentoch) {
-                    this.stavVCentoch -= eur * 100 + centov;
-                }
-            }
+        if (centov >= 100) {
+            return;
         }
+        
+        if (eur < 0 || centov < 0) {
+            return;
+        }
+        
+        if (eur * 100 + centov > this.stavVCentoch) {
+            return;
+        }
+        
+        this.stavVCentoch -= eur * 100 + centov;
     }
     
     public String getStav() {
