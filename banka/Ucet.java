@@ -17,11 +17,13 @@ public class Ucet {
     }
     
     public void vlozPeniaze(int eur, int centov) {
-        if (centov >= 100) {
+        if (centov >= 100 || centov < 0) {
+            System.out.println("Neplatná hodnota centov");
             return;
         }
         
-        if (eur < 0 || centov < 0) {
+        if (eur < 0) {
+            System.out.println("Neplatná hodnota eur");
             return;
         }
         
@@ -29,15 +31,18 @@ public class Ucet {
     }
     
     public void vyberPeniaze(int eur, int centov) {
-        if (centov >= 100) {
+        if (centov >= 100 || centov < 0) {
+            System.out.println("Neplatná hodnota centov");
             return;
         }
         
-        if (eur < 0 || centov < 0) {
+        if (eur < 0) {
+            System.out.println("Neplatná hodnota eur");
             return;
         }
         
         if (eur * 100 + centov > this.stavVCentoch) {
+            System.out.println("!!! Nemáš toľko peňazí na účte !!!");
             return;
         }
         
