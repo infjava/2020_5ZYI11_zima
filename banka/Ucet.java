@@ -10,4 +10,8 @@ public class Ucet {
         this.urokovaSadzba = urokovaSadzba;
         this.cisloUctu = cisloUctu;
     }
+    
+    public String getCisloUctu() {
+        return this.cisloUctu;
+    }
 }
