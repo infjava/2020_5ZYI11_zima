@@ -20,7 +20,9 @@ public class Ucet {
     }
     
     public void vyberPeniaze(int eur, int centov) {
-        this.stavVCentoch -= eur * 100 + centov;
+        if (eur * 100 + centov <= this.stavVCentoch) {
+            this.stavVCentoch -= eur * 100 + centov;
+        }
     }
     
     public String getStav() {
