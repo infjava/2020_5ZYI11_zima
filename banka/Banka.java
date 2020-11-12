@@ -43,4 +43,14 @@ public class Banka {
             aktualny.vlozUroky();
         }
     }
+    
+    public Ucet getUcet(String cisloUctu) {
+        for (Ucet aktualny : this.ucty) {
+            if (aktualny.getCisloUctu().equals(cisloUctu)) {
+                return aktualny;
+            }
+        }
+        
+        return null;
+    }
 }
