@@ -31,7 +31,7 @@ public class Banka {
         int urokovaSadzba = 1;
         String cisloUctu = String.format("SK%02d%s000000%010d", kontrolneCislo, this.kodBanky, bban);
         
-        Ucet novyUcet = new Ucet(menoMajitela, urokovaSadzba, cisloUctu);
+        Ucet novyUcet = new Ucet(this, menoMajitela, urokovaSadzba, cisloUctu);
         
         this.ucty.add(novyUcet);
         
