@@ -52,4 +52,8 @@ public class Ucet {
     public String getStav() {
         return String.format("%d,%02d €", this.stavVCentoch / 100, this.stavVCentoch % 100);
     }
+    
+    public void vlozUroky() {
+        this.stavVCentoch += this.stavVCentoch * this.urokovaSadzba / 100;
+    }
 }
