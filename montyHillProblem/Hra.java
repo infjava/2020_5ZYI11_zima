@@ -26,4 +26,12 @@ public class Hra {
         
         this.dvere[poradoveCislo].vyber();
     }
+    
+    public void otvorDvere(int poradoveCislo) {
+        if (poradoveCislo < 0 || poradoveCislo >= 3) {
+            return;
+        }
+        
+        this.dvere[poradoveCislo].otvor();
+    }
 }
