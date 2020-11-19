@@ -8,7 +8,11 @@ public class Dvere {
         this.otvorene = false;
         this.vybrane = false;
     }
-    
+        
+    public boolean dajuSaVybrat() {
+        return !this.otvorene && !this.vybrane;
+    }
+
     public void vyber() {
         if (this.otvorene) {
             return;
@@ -19,6 +23,10 @@ public class Dvere {
     
     public void zrusVyber() {
         this.vybrane = false;
+    }
+    
+    public boolean dajuSaOtvorit() {
+        return !this.obsahujuVyhru && !this.vybrane;
     }
     
     public void otvor() {

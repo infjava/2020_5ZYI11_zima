@@ -27,6 +27,14 @@ public class Hra {
         this.dvere[poradoveCislo].vyber();
     }
     
+    public boolean dvereSaDajuOtvorit(int poradoveCislo) {
+        if (poradoveCislo < 0 || poradoveCislo >= 3) {
+            return false;
+        }
+        
+        return this.dvere[poradoveCislo].dajuSaOtvorit();
+    }
+    
     public void otvorDvere(int poradoveCislo) {
         if (poradoveCislo < 0 || poradoveCislo >= 3) {
             return;
@@ -35,6 +43,13 @@ public class Hra {
         this.dvere[poradoveCislo].otvor();
     }
     
+    public boolean dvereSaDajuVybrat(int poradoveCislo) {
+        if (poradoveCislo < 0 || poradoveCislo >= 3) {
+            return false;
+        }
+        
+        return this.dvere[poradoveCislo].dajuSaVybrat();
+    }
     
     public boolean jeVyhra() {
         for (Dvere aktualne : this.dvere) {
