@@ -10,6 +10,10 @@ public class Dvere {
     }
     
     public void vyber() {
+        if (this.otvorene) {
+            return;
+        }
+        
         this.vybrane = true;
     }
     
@@ -18,6 +22,14 @@ public class Dvere {
     }
     
     public void otvor() {
+        if (this.obsahujuVyhru) {
+            return;
+        }
+        
+        if (this.vybrane) {
+            return;
+        }
+        
         this.otvorene = true;
     }
 }
