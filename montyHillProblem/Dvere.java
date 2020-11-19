@@ -8,4 +8,12 @@ public class Dvere {
         this.otvorene = false;
         this.vybrane = false;
     }
+    
+    public void vyber() {
+        this.vybrane = true;
+    }
+    
+    public void zrusVyber() {
+        this.vybrane = false;
+    }
 }

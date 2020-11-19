@@ -14,4 +14,16 @@ public class Hra {
             this.dvere[i] = new Dvere(i == cisloVyhernychDveri);
         }
     }
+    
+    public void vyberDvere(int poradoveCislo) {
+        if (poradoveCislo < 0 || poradoveCislo >= 3) {
+            return;
+        }
+        
+        for (Dvere aktualne : this.dvere) {
+            aktualne.zrusVyber();
+        }
+        
+        this.dvere[poradoveCislo].vyber();
+    }
 }
