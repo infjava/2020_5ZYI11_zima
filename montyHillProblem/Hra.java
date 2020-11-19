@@ -34,4 +34,15 @@ public class Hra {
         
         this.dvere[poradoveCislo].otvor();
     }
+    
+    
+    public boolean jeVyhra() {
+        for (Dvere aktualne : this.dvere) {
+            if (aktualne.predstavujuVyhru()) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 }

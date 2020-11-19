@@ -32,4 +32,8 @@ public class Dvere {
         
         this.otvorene = true;
     }
+    
+    public boolean predstavujuVyhru() {
+        return this.vybrane && this.obsahujuVyhru;
+    }
 }
