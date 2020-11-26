@@ -1,10 +1,11 @@
+import java.util.ArrayList;
+
 public class Sachovnica {
-    private Stvorec[] policka;
+    private ArrayList<Stvorec> policka;
     
     public Sachovnica(int sirka, int vyska) {
-        this.policka = new Stvorec[vyska * sirka];
+        this.policka = new ArrayList<Stvorec>();
         
-        int index = 0;
         for (int riadok = 0; riadok < vyska; riadok++) {
             for (int stlpec = 0; stlpec < sirka; stlpec++) {
                 Stvorec policko = new Stvorec();
@@ -16,8 +17,7 @@ public class Sachovnica {
                 } else {
                     policko.zmenFarbu("white");
                 }
-                this.policka[index] = policko;
-                index++;
+                this.policka.add(policko);
             }
         }
     }
