@@ -4,6 +4,7 @@ public class Sachovnica {
     public Sachovnica(int sirka, int vyska) {
         this.policka = new Stvorec[vyska * sirka];
         
+        int index = 0;
         for (int riadok = 0; riadok < vyska; riadok++) {
             for (int stlpec = 0; stlpec < sirka; stlpec++) {
                 Stvorec policko = new Stvorec();
@@ -15,7 +16,8 @@ public class Sachovnica {
                 } else {
                     policko.zmenFarbu("white");
                 }
-                this.policka[riadok * sirka + stlpec] = policko;
+                this.policka[index] = policko;
+                index++;
             }
         }
     }
