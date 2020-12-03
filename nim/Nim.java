@@ -8,6 +8,8 @@ public class Nim {
     private String[] menaHracov;
     
     private int indexHracaNaTahu;
+    
+    private String vyherca;
 
     public Nim(int sirkaSachovnice, int vyskaSachovnice, String prvyHrac, String druhyHrac) {
         this.sachovnica = new Sachovnica(sirkaSachovnice, vyskaSachovnice);
@@ -20,6 +22,12 @@ public class Nim {
         this.menaHracov = new String[] {prvyHrac, druhyHrac};
         
         this.indexHracaNaTahu = 0;
+        
+        this.vyherca = null;
+    }
+    
+    public String getVyherca() {
+        return this.vyherca;
     }
     
     public String getHracNaTahu() {
@@ -41,6 +49,10 @@ public class Nim {
         
         this.kamenRiadok = novyRiadok;
         
+        if (this.kamenRiadok == 1 && this.kamenStlpec == 1) {
+            this.vyherca = this.getHracNaTahu();
+        }
+        
         this.indexHracaNaTahu = (this.indexHracaNaTahu + 1) % this.menaHracov.length;
     }
     
@@ -58,6 +70,10 @@ public class Nim {
         this.kamen.posun(this.kamenRiadok, novyStlpec);
         
         this.kamenStlpec = novyStlpec;
+        
+        if (this.kamenRiadok == 1 && this.kamenStlpec == 1) {
+            this.vyherca = this.getHracNaTahu();
+        }
         
         this.indexHracaNaTahu = (this.indexHracaNaTahu + 1) % this.menaHracov.length;
     }
