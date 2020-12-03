@@ -35,40 +35,32 @@ public class Nim {
     }
     
     public void posunDole(int pocetPolicok) {
-        if (pocetPolicok <= 0) {
+        this.posun(pocetPolicok, 0);
+    }
+    
+    public void posunVlavo(int pocetPolicok) {
+        this.posun(0, pocetPolicok);
+    }
+        
+    private void posun(int pocetPolicokDole, int pocetPolicokVlavo) {
+        if (pocetPolicokDole <= 0 && pocetPolicokVlavo <= 0) {
             return;
         }
         
-        int novyRiadok = this.kamenRiadok - pocetPolicok;
+        int novyRiadok = this.kamenRiadok - pocetPolicokDole;
+        int novyStlpec = this.kamenStlpec - pocetPolicokVlavo;
         
         if (novyRiadok < 1) {
             return;
         }
         
-        this.kamen.posun(novyRiadok, this.kamenStlpec);
-        
-        this.kamenRiadok = novyRiadok;
-        
-        if (this.kamenRiadok == 1 && this.kamenStlpec == 1) {
-            this.vyherca = this.getHracNaTahu();
-        }
-        
-        this.indexHracaNaTahu = (this.indexHracaNaTahu + 1) % this.menaHracov.length;
-    }
-    
-    public void posunVlavo(int pocetPolicok) {
-        if (pocetPolicok <= 0) {
-            return;
-        }
-        
-        int novyStlpec = this.kamenStlpec - pocetPolicok;
-        
         if (novyStlpec < 1) {
             return;
         }
         
-        this.kamen.posun(this.kamenRiadok, novyStlpec);
+        this.kamen.posun(novyRiadok, novyStlpec);
         
+        this.kamenRiadok = novyRiadok;
         this.kamenStlpec = novyStlpec;
         
         if (this.kamenRiadok == 1 && this.kamenStlpec == 1) {
