@@ -5,10 +5,9 @@ public class Nim {
     private int kamenRiadok;
     private int kamenStlpec;
     
-    private String prvyHrac;
-    private String druhyHrac;
+    private String[] menaHracov;
     
-    private boolean prvyNaTahu;
+    private int indexHracaNaTahu;
 
     public Nim(int sirkaSachovnice, int vyskaSachovnice, String prvyHrac, String druhyHrac) {
         this.sachovnica = new Sachovnica(sirkaSachovnice, vyskaSachovnice);
@@ -18,18 +17,13 @@ public class Nim {
         this.kamenRiadok = vyskaSachovnice;
         this.kamenStlpec = sirkaSachovnice;
         
-        this.prvyHrac = prvyHrac;
-        this.druhyHrac = druhyHrac;
+        this.menaHracov = new String[] {prvyHrac, druhyHrac};
         
-        this.prvyNaTahu = true;
+        this.indexHracaNaTahu = 0;
     }
     
     public String getHracNaTahu() {
-        if (this.prvyNaTahu) {
-            return this.prvyHrac;
-        } else {
-            return this.druhyHrac;
-        }
+        return this.menaHracov[this.indexHracaNaTahu];
     }
     
     public void posunDole(int pocetPolicok) {
@@ -47,7 +41,7 @@ public class Nim {
         
         this.kamenRiadok = novyRiadok;
         
-        this.prvyNaTahu = !this.prvyNaTahu;
+        this.indexHracaNaTahu = (this.indexHracaNaTahu + 1) % this.menaHracov.length;
     }
     
     public void posunVlavo(int pocetPolicok) {
@@ -65,6 +59,6 @@ public class Nim {
         
         this.kamenStlpec = novyStlpec;
         
-        this.prvyNaTahu = !this.prvyNaTahu;
+        this.indexHracaNaTahu = (this.indexHracaNaTahu + 1) % this.menaHracov.length;
     }
 }
