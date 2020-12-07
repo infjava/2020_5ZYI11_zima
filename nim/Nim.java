@@ -47,6 +47,10 @@ public class Nim {
     public void posunVlavo(int pocetPolicok) {
         this.posun(0, pocetPolicok);
     }
+    
+    public void posunSikmo(int pocetPolicok) {
+        this.posun(pocetPolicok, pocetPolicok);
+    }
         
     private void posun(int pocetPolicokDole, int pocetPolicokVlavo) {
         if (pocetPolicokDole <= 0 && pocetPolicokVlavo <= 0) {
