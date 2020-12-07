@@ -24,6 +24,10 @@ public class Nim {
         this.indexHracaNaTahu = 0;
         
         this.vyherca = null;
+        
+        if (this.getHracNaTahu().equals("PC")) {
+            this.tahPC();
+        }
     }
     
     public String getVyherca() {
