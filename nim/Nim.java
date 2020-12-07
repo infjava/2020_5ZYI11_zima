@@ -51,6 +51,14 @@ public class Nim {
     public void posunSikmo(int pocetPolicok) {
         this.posun(pocetPolicok, pocetPolicok);
     }
+    
+    public int getKamenRiadok() {
+        return this.kamenRiadok;
+    }
+    
+    public int getKamenStlpec() {
+        return this.kamenStlpec;
+    }
         
     private void posun(int pocetPolicokDole, int pocetPolicokVlavo) {
         if (pocetPolicokDole <= 0 && pocetPolicokVlavo <= 0) {
