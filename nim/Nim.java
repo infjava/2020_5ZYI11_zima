@@ -68,5 +68,19 @@ public class Nim {
         }
         
         this.indexHracaNaTahu = (this.indexHracaNaTahu + 1) % this.menaHracov.length;
+        
+        if (this.getHracNaTahu().equals("PC")) {
+            this.tahPC();
+        }
+    }
+    
+    private void tahPC() {
+        if (this.kamenStlpec > this.kamenRiadok) {
+            this.posunVlavo(this.kamenStlpec - this.kamenRiadok);
+        } else if (this.kamenStlpec < this.kamenRiadok) {
+            this.posunDole(this.kamenRiadok - this.kamenStlpec);
+        } else {
+            this.posunVlavo(1);
+        }
     }
 }
