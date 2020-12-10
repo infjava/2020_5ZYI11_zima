@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Displej {
     private static final int SIRKA = 10;
     private static final int VYSKA = 20;
