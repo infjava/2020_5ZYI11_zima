@@ -14,8 +14,8 @@ public class NimKlikaci {
     }
     
     public void vyberSuradnice(int x, int y) {
-        int cisloStlpca = x / 15 + 1;
-        int cisloRiadku = this.vyskaSachovnice - y / 15;
+        int cisloStlpca = x / Sachovnica.VELKOST_POLICKA + 1;
+        int cisloRiadku = this.vyskaSachovnice - y / Sachovnica.VELKOST_POLICKA;
         
         int rozdielStlpca = this.hra.getKamenStlpec() - cisloStlpca;
         int rozdielRiadku = this.hra.getKamenRiadok() - cisloRiadku;

@@ -9,8 +9,8 @@ public class Kamen {
         this.poziciaStlpec = sachovnica.getSirka();
         
         this.kamen = new Kruh();
-        this.kamen.zmenPriemer(13);
-        this.kamen.posunVodorovne(-19 + (sachovnica.getSirka() - 1) * 15);
+        this.kamen.zmenPriemer(Sachovnica.VELKOST_POLICKA - 2);
+        this.kamen.posunVodorovne(-19 + (sachovnica.getSirka() - 1) * Sachovnica.VELKOST_POLICKA);
         this.kamen.posunZvisle(-59);
     }
     
@@ -27,8 +27,8 @@ public class Kamen {
         int posunRiadky = novyRiadok - this.poziciaRiadok;
         
         this.kamen.skry();
-        this.kamen.posunVodorovne(posunStlpce * 15);
-        this.kamen.posunZvisle(-posunRiadky * 15);
+        this.kamen.posunVodorovne(posunStlpce * Sachovnica.VELKOST_POLICKA);
+        this.kamen.posunZvisle(-posunRiadky * Sachovnica.VELKOST_POLICKA);
         this.kamen.zobraz();
         
         this.poziciaRiadok = novyRiadok;

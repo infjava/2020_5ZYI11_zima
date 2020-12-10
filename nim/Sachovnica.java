@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 
 public class Sachovnica {
+    public static final int VELKOST_POLICKA = 30;
+    
     private ArrayList<Stvorec> policka;
     private ArrayList<Kamen> kamene;
     
@@ -20,9 +22,9 @@ public class Sachovnica {
         for (int riadok = 0; riadok < vyska; riadok++) {
             for (int stlpec = 0; stlpec < sirka; stlpec++) {
                 Stvorec policko = new Stvorec();
-                policko.zmenStranu(15);
-                policko.posunVodorovne(stlpec * 15 - 60);
-                policko.posunZvisle(riadok * 15 - 50);
+                policko.zmenStranu(Sachovnica.VELKOST_POLICKA);
+                policko.posunVodorovne(stlpec * Sachovnica.VELKOST_POLICKA - 60);
+                policko.posunZvisle(riadok * Sachovnica.VELKOST_POLICKA - 50);
                 if ((riadok + stlpec) % 2 != vyska % 2) {
                     policko.zmenFarbu("black");
                 } else {
