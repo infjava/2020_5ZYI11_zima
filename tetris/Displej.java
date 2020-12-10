@@ -5,9 +5,11 @@ public class Displej {
     private static final int VYSKA = 20;
     private static final int VELKOST_PIXELU = 15;
     
+    private static Displej instancia;
+    
     private Stvorec[][] pixely;
     
-    public Displej() {
+    private Displej() {
         this.pixely = new Stvorec[Displej.VYSKA][Displej.SIRKA];
         
         for (int y = 0; y < Displej.VYSKA; y++) {
@@ -23,11 +25,18 @@ public class Displej {
         }
     }
     
+    public static Displej getDisplej() {
+        if (Displej.instancia == null) {
+            Displej.instancia = new Displej();
+        }
+        return Displej.instancia;
+    }
+    
     public void zmen(int x, int y, boolean zasvietit) {
         if (zasvietit) {
-            this.pixely[y][x].zobraz();
+            this.pixely[y][x].zmenFarbu("yellow");
         } else {
-            this.pixely[y][x].skry();
+            this.pixely[y][x].zmenFarbu("black");
         }
     }
 }
