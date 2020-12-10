@@ -3,7 +3,7 @@ public class Displej {
     private static final int VYSKA = 20;
     private static final int VELKOST_PIXELU = 15;
     
-    private static Displej instancia;
+    private static Displej instancia = new Displej();
     
     private Stvorec[][] pixely;
     
@@ -24,9 +24,6 @@ public class Displej {
     }
     
     public static Displej getDisplej() {
-        if (Displej.instancia == null) {
-            Displej.instancia = new Displej();
-        }
         return Displej.instancia;
     }
     
