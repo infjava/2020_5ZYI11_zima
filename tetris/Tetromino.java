@@ -50,6 +50,14 @@ public class Tetromino {
         int novaSirka = staraVyska;
         int novaVyska = staraSirka;
         
+        if (this.x > Displej.SIRKA - novaSirka) {
+            return;
+        }
+        
+        if (this.y > Displej.VYSKA - novaVyska) {
+            return;
+        }
+        
         boolean[][] novePixely = new boolean[novaVyska][novaSirka];
         
         for (int stareY = 0; stareY < this.svietiacePixely.length; stareY++) {
