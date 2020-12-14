@@ -14,12 +14,20 @@ public class Tetromino {
     }
     
     public void posunVlavo() {
+        if (this.x <= 0) {
+            return;
+        }
+        
         this.zmaz();
         this.x--;
         this.nakresli();
     }
     
     public void posunVpravo() {
+        if (this.x >= Displej.SIRKA - this.svietiacePixely[0].length) {
+            return;
+        }
+        
         this.zmaz();
         this.x++;
         this.nakresli();
