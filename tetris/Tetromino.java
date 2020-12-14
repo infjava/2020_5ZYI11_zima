@@ -9,6 +9,8 @@ public class Tetromino {
         
         this.x = 0;
         this.y = 0;
+        
+        this.nakresli();
     }
     
     public void posunVlavo() {
@@ -23,7 +25,7 @@ public class Tetromino {
         this.nakresli();
     }
     
-    public void zmaz() {
+    private void zmaz() {
         for (int y = 0; y < this.svietiacePixely.length; y++) {
             for (int x = 0; x < this.svietiacePixely[y].length; x++) {
                 Displej displej = Displej.getDisplej();
@@ -32,7 +34,7 @@ public class Tetromino {
         }
     }
     
-    public void nakresli() {
+    private void nakresli() {
         for (int y = 0; y < this.svietiacePixely.length; y++) {
             for (int x = 0; x < this.svietiacePixely[y].length; x++) {
                 Displej displej = Displej.getDisplej();
