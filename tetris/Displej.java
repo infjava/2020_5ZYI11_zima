@@ -1,6 +1,7 @@
 public class Displej {
-    private static final int SIRKA = 10;
-    private static final int VYSKA = 20;
+    public static final int SIRKA = 10;
+    public static final int VYSKA = 20;
+    
     private static final int VELKOST_PIXELU = 15;
     
     private static Displej instancia = new Displej();

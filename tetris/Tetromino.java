@@ -7,7 +7,7 @@ public class Tetromino {
     public Tetromino(boolean[][] svietiacePixely) {
         this.svietiacePixely = svietiacePixely;
         
-        this.x = 0;
+        this.x = (Displej.SIRKA - this.svietiacePixely[0].length) / 2;
         this.y = 0;
         
         this.nakresli();
