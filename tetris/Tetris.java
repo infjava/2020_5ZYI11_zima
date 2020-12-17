@@ -1,11 +1,11 @@
 public class Tetris {
+    private GeneratorTetromin generator;
     private Tetromino tetromino;
     private int pocetTikov;
     
     public Tetris() {
-        this.tetromino = new Tetromino(new boolean[][]{
-            {true, false}, {true, false}, {true, true}
-        });
+        this.generator = new GeneratorTetromin();
+        this.tetromino = this.generator.vytvorNahodne();
         
         this.pocetTikov = 0;
         
@@ -25,9 +25,7 @@ public class Tetris {
         if (this.pocetTikov % 4 == 0) {
             this.tetromino.posunDole();
             if (this.tetromino.jeNaDne()) {
-                this.tetromino = new Tetromino(new boolean[][]{
-                    {true, false}, {true, false}, {true, true}
-                });
+                this.tetromino = this.generator.vytvorNahodne();
             }
         }
     }
