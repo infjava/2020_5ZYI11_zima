@@ -43,6 +43,10 @@ public class Tetromino {
         this.nakresli();
     }
     
+    public boolean jeNaDne() {
+        return this.y >= Displej.VYSKA - this.svietiacePixely.length;
+    }
+    
     public void otoc() {
         int staraSirka = this.svietiacePixely[0].length;
         int staraVyska = this.svietiacePixely.length;

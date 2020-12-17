@@ -24,6 +24,11 @@ public class Tetris {
         this.pocetTikov++;
         if (this.pocetTikov % 4 == 0) {
             this.tetromino.posunDole();
+            if (this.tetromino.jeNaDne()) {
+                this.tetromino = new Tetromino(new boolean[][]{
+                    {true, false}, {true, false}, {true, true}
+                });
+            }
         }
     }
     
