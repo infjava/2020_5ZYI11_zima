@@ -1,9 +1,11 @@
+import java.io.IOException;
+
 public class Tetris {
     private GeneratorTetromin generator;
     private Tetromino tetromino;
     private int pocetTikov;
     
-    public Tetris() {
+    public Tetris() throws IOException {
         this.generator = new GeneratorTetromin();
         this.tetromino = this.generator.vytvorNahodne();
         
